@@ -22,11 +22,18 @@ Este servicio aprovecha la REST API de GitLab para interactuar con los proyectos
 
 ## 📋 Uso
 
-1. Configura tu token de acceso personal en el archivo `.env`:
-  ```env
-  GITLAB_TOKEN=tu_token_aqui
+1. Configura tu token de acceso personal en el archivo `services/apirest.js`:
+  ```bash
+  const headers = {
+    'Authorization': 'Bearer tu_token_aqui',
+    'Cookie': '__cf_bm=aSF5PwxYWKdvJT6PqUJw4.2RqwdU_vRvKKRnmrm78JQ-1747146008-1.0.1.1-VLbBQ9c21_NAjV0D5YVjzLepfbFThgu491dnZQ6HGlzS1mgMjlIL8KK5jTXmeoTNik8lTLuU6D8YRmqieFziTWd3z69cNSa29To8IfCwsB8; _cfuvid=P7fyW8.TI6SubTLUIsGKw5TDli6jp2PAW0Jh3WOAsTo-1747146008072-0.0.1.1-604800000'
+  };
   ```
+
 2. Ejecuta el script para obtener los proyectos:
   ```bash
-  npm start
+  node index.js 100 1
   ```
+  Dónde:
+  * 100: Es el número de resultado por pagina.
+  * 1: Es la página
